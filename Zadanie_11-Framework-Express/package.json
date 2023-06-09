@@ -1,0 +1,31 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "The \"Hello World\" application",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha ./test/test",
+    "start": "node app2",
+    "app1": "echo 'Uruchamiam aplikację nr 1' && node app1",
+    "app2": "echo 'Uruchamiam aplikację nr 2' && node app2",
+    "extra": "node extra"
+  },
+  "author": "Kuba Ocytko",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "express": "^4.18.2",
+    "jszip": "^3.10.1",
+    "mongodb": "^4.13.0",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2",
+    "shelljs": "^0.8.5",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-json": "^1.0.0",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
+}

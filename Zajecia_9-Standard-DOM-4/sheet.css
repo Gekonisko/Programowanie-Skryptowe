@@ -1,0 +1,104 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+aside  {
+    float: right;
+    margin: 25px;
+    width: 40vw;
+    height: auto;
+
+}
+
+aside *
+{
+    margin: 10px;
+    font-weight: bold;
+}
+
+aside ul *
+{
+    margin: 0px;
+    font-weight: bold;
+}
+
+aside h1{
+    animation-name: change-color;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+}
+
+@keyframes change-color {
+    from {
+      color: red;
+    }
+  
+    to {
+      color: blue;
+    }
+}
+  
+footer {
+    
+    float: left;
+    height: auto;
+    width: 95vw;
+    padding: 5px;
+    margin: 25px;
+    font-weight: 700;
+}
+  
+header {
+    float: left;
+    height: auto;
+    width: 95vw;
+    padding: 5px;
+    margin: 25px;
+}
+
+header h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    float: left;
+    padding: 5px;
+    margin: 25px;
+    width: 50vw;
+    text-align: left;
+}
+
+main *{
+    margin: 5px;
+    margin-bottom: 15px;
+
+}
+  
+nav {
+    margin: 25px;
+    width: 150px;
+    float: left;
+}
+
+nav ul {
+    float: right;
+    padding-right: 5px;
+}
+  
+nav li{
+    font-weight:bold;
+}
+
+.azure
+{
+    background-color:#eff;
+}
+
+.shadow-border{
+    border: #A8A8A8 2px solid;
+    border-style: groove;
+    box-shadow: 0px 0px 10px black;
+}

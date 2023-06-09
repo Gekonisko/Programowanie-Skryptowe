@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Page title
+    </title>
+
+</head>
+
+<body>
+    <main>
+        <h1>
+            Płótno
+        </h1>
+
+        <h1>
+            Canvas
+        </h1>
+
+        <canvas id="canvas" width="800" height="800" style="border:1px solid #000000;">
+            Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas" / It looks like your browser does not
+            support the "canvas" element
+        </canvas>
+
+    </main>
+    <script>
+        var e = document.getElementById('canvas');
+        var c = e.getContext('2d');
+        var d = e.getContext('2d');
+        var rightDistance = 160;
+        var leftDistance = 160;
+
+        c.lineWidth = 8;
+        c.strokeStyle = 'black';
+        c.fillStyle = 'white';
+        c.arc(e.width / 2 - leftDistance, e.height / 2, 200, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        c.moveTo(e.width / 2 - 160 - leftDistance, e.height / 2 - 120);
+        c.lineTo(e.width / 2 - 160 - leftDistance, e.height / 2 + 80);
+        c.arc(e.width / 2 - leftDistance, e.height / 2 + 200, 200, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        c.moveTo(e.width / 2 + 160 - leftDistance, e.height / 2 - 120);
+        c.lineTo(e.width / 2 + 160 - leftDistance, e.height / 2 + 80);
+        c.stroke();
+        c.closePath();
+        c.arc(e.width / 2 + rightDistance, e.height / 2, 200, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        c.moveTo(e.width / 2 - 160 + rightDistance, e.height / 2 - 120);
+        c.lineTo(e.width / 2 - 160 + rightDistance, e.height / 2 + 80);
+        c.arc(e.width / 2 + rightDistance, e.height / 2 + 200, 200, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        c.moveTo(e.width / 2 + 160 + rightDistance, e.height / 2 - 120);
+        c.lineTo(e.width / 2 + 160 + rightDistance, e.height / 2 + 80);
+        c.stroke();
+        c.closePath();
+        c.moveTo(e.width / 2 - 160 + rightDistance, e.height / 2 - 80);
+        c.lineTo(e.width / 2 - 160 + rightDistance, e.height / 2 + 100);
+        c.arc(e.width / 2 + rightDistance, e.height / 2 + 220, 200, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        c.moveTo(e.width / 2 + 160 + rightDistance, e.height / 2 - 80);
+        c.lineTo(e.width / 2 + 160 + rightDistance, e.height / 2 + 100);
+        c.stroke();
+        c.closePath();
+        c.moveTo(e.width / 2 - 160 - leftDistance, e.height / 2 - 80);
+        c.lineTo(e.width / 2 - 160 - leftDistance, e.height / 2 + 100);
+        c.arc(e.width / 2 - leftDistance, e.height / 2 + 220, 200, 1.2 * Math.PI, 1.8 * Math.PI, false);
+        c.stroke();
+
+    </script>
+</body>
+
+</html>

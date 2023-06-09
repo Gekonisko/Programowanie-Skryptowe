@@ -1,0 +1,93 @@
+<%- include('layout.ejs'); %>
+<%- include('components/dashboard_header.ejs'); %>
+<style>
+    input {
+        display: block;
+        margin: 20px 0;
+    }
+
+    #extended{
+        display: none;
+    }
+
+    select{
+        margin-bottom: 20px;
+    }
+</style>
+
+
+<div>
+    <main class="container">
+        <h1>Add Book</h1>
+        <input type="text" id="title" placeholder="Title"  class="form-control">
+        <input type="text" id="author" placeholder="Author"  class="form-control">
+        <input type="number" id="quantity"  placeholder="Quantity"  class="form-control">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="extendedBook">
+            <label class="form-check-label" for="extendedBook" onclick='extended()'>
+                Extended
+            </label>
+        </div>
+
+        <div id="extended">
+            <input type="text" id="isbn" placeholder="ISBN"  class="form-control">
+            <input type="number" id="pages" placeholder="Pages"  class="form-control">
+            <input type="date" id="releaseData" placeholder="Release Data"  class="form-control">
+            Book Cover:
+            <select class="form-control" id="bookCover" aria-label="Book Cover">
+                <% for(var i=0; i < typeBookCover.length; i++) { %>
+                    <option>
+                        <%= typeBookCover[i] %>
+                    </option>
+                <% } %>
+            </select>
+            Description:
+            <textarea class="form-control" id="description" placeholder="Description"> </textarea>
+
+
+        </div>
+
+        <input type="submit" onclick='addBook()' class="btn btn-primary" value="Add">
+    </main>
+</div>
+
+<script>
+    async function addBook() {
+        let book = {}
+        let title = document.querySelector("input#title").value;
+        let author = document.querySelector("input#author").value;
+        let quantity = document.querySelector("input#quantity").value;
+
+        if(document.querySelector("input#extendedBook").checked){
+            let isbn = document.querySelector("input#isbn").value;
+            let pages = document.querySelector("input#pages").value;
+            let releaseData = document.querySelector("input#releaseData").value;
+            let bookCover = document.querySelector("select#bookCover").value;
+            let description = document.querySelector("textarea#description").value;
+
+            book = { ...book, isbn, pages, releaseData, bookCover, description  }
+        }
+        
+        book = { ...book, title, author, quantity }
+        const result = await fetch('/addBook',{
+            method:'POST',
+            body: JSON.stringify(book),
+            headers:{
+                "Content-Type": "application/json"
+            }
+         });
+        const textResult = await result.text();
+        alert(textResult);
+    }
+
+    async function extended() {
+        let checkbox = document.querySelector("input#extendedBook");
+        let extendedContent = document.querySelector("#extended");
+        extendedContent.style.display = checkbox.checked? "none" : "block"
+    }
+
+</script>
+
+</body>
+
+</html>

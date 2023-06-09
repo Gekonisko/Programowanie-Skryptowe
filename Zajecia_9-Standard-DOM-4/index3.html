@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src=" https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src=" https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        var span1 = ReactDOM.createRoot(document.getElementById('span1'));
+        var span2 = ReactDOM.createRoot(document.getElementById('span2'));
+        var span3 = ReactDOM.createRoot(document.getElementById('span3'));
+        var span4 = ReactDOM.createRoot(document.getElementById('span4'));
+
+        function StartCountingDown() {
+            let value = document.getElementById("name").value;
+            span1.unmount();
+            span2.unmount();
+            span3.unmount();
+            span4.unmount();
+            span1 = ReactDOM.createRoot(document.getElementById('span1'));
+            span2 = ReactDOM.createRoot(document.getElementById('span2'));
+            span3 = ReactDOM.createRoot(document.getElementById('span3'));
+            span4 = ReactDOM.createRoot(document.getElementById('span4'));
+            span1.render(<Counter timeInSecond={value} />);
+            span2.render(<Counter timeInSecond={value} />);
+            span3.render(<Counter timeInSecond={value} />);
+            span4.render(<Counter timeInSecond={value} />);
+        }
+
+        class Counter extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { seconds: props.timeInSecond };
+                this.timer = 0;
+                this.countDown = this.countDown.bind(this);
+            }
+
+            startTimer() {
+                if (this.timer == 0 && this.state.seconds > 0) {
+                    this.timer = setInterval(this.countDown, 1000);
+                }
+            }
+
+            countDown() {
+                let seconds = this.state.seconds - 1;
+                this.setState({
+                    seconds: seconds,
+                });
+
+                if (seconds == 0) {
+                    clearInterval(this.timer);
+                }
+            }
+
+            componentDidMount() {
+                this.startTimer();
+            }
+
+            render() {
+                return (
+                    <div>
+                        {this.state.seconds}
+                    </div>
+                );
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+
+    <input type="text" id="name" name="name" required size="10">
+    <button onclick="StartCountingDown()">Click</button>
+    <div id="span1"></div>
+    <div id="span2"></div>
+    <div id="span3"></div>
+    <div id="span4"></div>
+</body>
+
+</html>

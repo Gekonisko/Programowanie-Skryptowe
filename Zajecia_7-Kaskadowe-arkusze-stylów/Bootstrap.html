@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Zmień wartość "lang" z 'en' na 'pl' -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <title>
+        Tytuł strony / Page tile
+    </title>
+
+    <style>
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        @media (max-width: 1024px) {
+            .ksiazka {
+                float: left;
+            }
+        }
+
+        .float-clear {
+            clear: none;
+            width: 97vw;
+        }
+
+        .ksiazki {
+            width: 97vw;
+        }
+
+        aside h1 {
+            animation-name: change-color;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            /* animation-timing-function: linear; */
+        }
+
+        @keyframes change-color {
+            from {
+                color: red;
+            }
+
+            to {
+                color: blue;
+            }
+        }
+
+        .wysrodkuj {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .ksiazka {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-position: center;
+            width: 300px;
+            animation-name: ksiazka-rotation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes ksiazka-rotation {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            25% {
+                transform: perspective(800px) rotateY(60deg) translateX(-150px);
+            }
+
+            50% {
+                transform: rotateY(0deg);
+            }
+
+            75% {
+                transform: perspective(800px) rotateY(-60deg) translateX(150px);
+            }
+
+            100% {
+                transform: rotateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="grid">
+    <header class="azure shadow-border g-col-12 border border-dark shadow p-3 mb-5 text-bg-info m-3">
+        <!-- Page title -->
+        <!-- Background color: #EFF -->
+        <!-- Border color: #A8A8A8 -->
+        <!-- 
+        <h1>
+            Tytuł strony
+        </h1> -->
+
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">Contact</a>
+            </li>
+        </ul>
+    </header>
+
+    <nav class="azure shadow-border g-col-6 border border-dark shadow p-3 mb-5 text-bg-info m-3 w-auto float-start">
+        <!--Tutaj menu nawigacyjne / Here the navigation menu -->
+        <!-- left & right margin: 25px -->
+
+        <div class="card float-start" style="width: 18rem;">
+            <img src="https://yt3.ggpht.com/8TywhTF76upP48gAAa-8Nz3-oSgnkXoLUuES4XWj9ag2u2ONViQBTdVaDh4uqt7HeQ1_DPy_jA=s900-c-k-c0x00ffffff-no-rj"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">AGH</h5>
+                <a href="https://www.agh.edu.pl/" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <ul class="float-end">
+            <li>
+                <a href="">Element 1</a>
+            </li>
+
+            <li>
+                <a href="">Element 2</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Tutaj treść panelu bocznego / Here the content of the side panel-->
+
+    <aside class="azure shadow-border g-col-6 border border-dark shadow p-3 mb-5 text-bg-info m-3 w-50 float-end">
+        <h1>
+            Panel boczny
+        </h1>
+
+        <h2>
+            Ciekawe odsyłacze
+        </h2>
+
+        <ul>
+            <li>
+                <a href="">Odsyłacz 1</a>
+            </li>
+
+            <li>
+                <a href="">Odsyłacz 2</a>
+            </li>
+
+            <li>
+                <a href="">Odsyłacz 3</a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="azure shadow-border g-col-6 border border-dark shadow p-3 mb-5 text-bg-info m-3 w-50 float-start">
+        <!--Tutaj treść strony / Here the content of the page -->
+
+        <h1>
+            Treść strony
+        </h1>
+
+        <blockquote>
+            Natenczas Wojski chwycił na taśmie przypięty Swój róg bawoli, długi, cętkowany, kręty Jak wąż boa, oburącz
+            do ust go przycisnął, Wzdął policzki jak banię, w oczach krwią zabłysnął, Zasunął wpół powieki, wciągnął w
+            głąb pół brzucha I do płuc wysłał z niego cały zapas ducha, I zagrał: róg jak wicher, wirowatym dechem
+            Niesie w puszczę muzykę i podwaja echem.
+        </blockquote>
+        <blockquote>
+            Umilkli strzelcy, stali szczwacze zadziwieni Mocą, czystością,
+            dziwną harmoniją pieni. Starzec cały kunszt, którym niegdyś w lasach słynął, Jeszcze raz przed uszami
+            myśliwców rozwinął; Napełnił wnet, ożywił knieje i dąbrowy, Jakby psiarnię w nie wpuścił i rozpoczął łowy.
+        </blockquote>
+        <blockquote>
+            Bo w graniu była łowów historyja krótka: Zrazu odzew dźwięczący, rześki: to pobudka; Potem jęki po jękach
+            skomlą: to psów granie; A gdzieniegdzie ton twardszy jak grzmot: to strzelanie.
+        </blockquote>
+    </main>
+
+
+    <div class="ksiazki azure shadow-border g-col-12 border border-dark shadow p-3 mb-5 text-bg-info m-3 float-start">
+        <div class="wysrodkuj">
+            <img src="python.jpg" class="img-fluid ksiazka g-col-4 mx-auto d-block" alt="...">
+            <img src="geologia.png" class="img-fluid ksiazka g-col-4 mx-auto d-block" alt="...">
+            <img src="grafiki.jpg" class="img-fluid ksiazka g-col-4 mx-auto d-block" alt="...">
+        </div>
+
+    </div>
+
+    <footer
+        class="azure shadow-border g-col-12 border border-dark shadow p-3 mb-5 text-bg-info m-3 float-start float-clear">
+        <!-- Tutaj treść stopki / Here the content of the footer -->
+        <a href="mailto:jakubocytko@student.agh.edu.pl">Jakub Ocytko</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

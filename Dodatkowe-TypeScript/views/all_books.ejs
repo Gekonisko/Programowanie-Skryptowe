@@ -1,0 +1,32 @@
+<%- include('layout.ejs'); %>
+<%- include('components/dashboard_header.ejs'); %>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <% for(var i=0; i < books.length; i++) { %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= books[i].title %></td>
+                <td><%= books[i].author %></td>
+                <td><%= books[i].quantity %></td>
+            </tr>
+        <% } %>
+        
+           
+</tbody>
+</table>
+
+
+</body>
+
+</html>

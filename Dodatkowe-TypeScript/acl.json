@@ -1,0 +1,14 @@
+[
+  {
+    "group": "user",
+    "permissions": [
+      {
+        "resource": "dashboard/*",
+        "methods": [
+          "GET"
+        ],
+        "action": "allow"
+      }
+    ]
+  }
+]

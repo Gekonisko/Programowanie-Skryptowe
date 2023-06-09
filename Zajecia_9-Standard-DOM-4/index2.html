@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var intervalID = 0;
+        var timer = 10;
+
+        function StartCountDown() {
+            timer = document.getElementById("name").value;
+            clearInterval(intervalID);
+            intervalID = setInterval(CountDown, 1000);
+        }
+
+        function CountDown() {
+            if (timer >= 0) {
+                document.querySelectorAll(".counter").forEach(element => element.innerHTML = timer)
+            }
+            timer -= 1;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="name" name="name" required size="10">
+    <button onclick="StartCountDown();">Action</button>
+    <span class="counter"></span>
+    <span class="counter"></span>
+    <span class="counter"></span>
+    <span class="counter"></span>
+</body>
+
+</html>

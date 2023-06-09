@@ -1,0 +1,18 @@
+{
+  "name": "zadanie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon server1",
+    "server1": "npx nodemon server1",
+    "server2": "npx nodemon server2"
+  },
+  "author": "Kuba Ocytko",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
+  }
+}

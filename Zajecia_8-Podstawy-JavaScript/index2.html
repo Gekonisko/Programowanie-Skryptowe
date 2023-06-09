@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="skrypt.js"></script>
+</head>
+
+<body onLoad="
+            console.log('Tekst 1');
+            window.alert('Tekst 2');
+          ">
+    <div>Treść dokumentu HTML</div>
+    <div>Treść dokumentu HTML</div>
+    <div>Treść dokumentu HTML</div>
+    <script>
+        let input = window.prompt("Tekst1", "Tekst2");
+        console.log(typeof input);
+    </script>
+
+    <form onclick="click_form()">
+        <input id="pole_tekstowe" name="pole_tekstowe" type="text">
+        <input name="pole_liczbowe" type="number">
+        <input type="button" value="Wypisz">
+    </form>
+</body>
+
+</html>

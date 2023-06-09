@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title
+            | Time
+        script.
+
+            async function syncTime(event) {
+                event.preventDefault()
+                let remote = document.querySelector("div#remote");
+                let local = document.querySelector("div#local");
+
+                let area = document.querySelector("input.area");
+                let location = document.querySelector("input.location");
+                
+                remote.textContent = 'Downloading data'
+                try{
+                    let result = await fetch(`http://worldtimeapi.org/api/timezone/${area.value}/${location.value}`);
+                    let text = await result.text();
+
+                    if(text.indexOf('This website is currently experiencing high load.') >=0){
+                        local.textContent = 'The server is overloaded'
+                    }else{
+                        local.textContent = text;
+                    }
+
+                    result = await fetch(`http://localhost:3001`);
+                    text = await result.text();
+                    local.innerHTML = text;
+
+                }catch(error){
+                    window.alert(error);
+                }
+            }
+
+
+    body
+        main
+            form()
+                input(type='name' class="area" placeholder="area")
+                input(type='name' class="location" placeholder="location")
+                button(class='btn btn-primary' onclick='syncTime(event)') Pobierz 
+
+            h1 Remote
+            div(id='remote') Remote date and time
+            h1 Local
+            div(id='local') Local date and time
